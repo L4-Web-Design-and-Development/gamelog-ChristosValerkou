@@ -2,16 +2,17 @@ interface GameCardProps {
   title: string;
   releaseDate: string;
   categoryTitle: string;
+  imageUrl: string;
 }
 export default function GameCard(props: GameCardProps) {
   const formattedDate = props.releaseDate.slice(0, 10);
 
   return (
     <div className="flex flex-col bg-stone-900 rounded-md overflow-hidden">
-      <div className="relative h-60 bg-stone-300">
+      <div className="relative h-60 ">
         <div className="absolute inset-0">
           <img
-            src=""
+            src={props.imageUrl}
             alt="Game Cover"
             className="absolute inset-0 w-full h-full object-cover rounded-xl"
           />
