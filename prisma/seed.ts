@@ -5,19 +5,22 @@ const prisma = new PrismaClient();
 async function seed() {
   const games = [
     {
-      title: "The Legend of Zelda: Breath of the Wild",
-      description: "An open-world adventure game set in the kingdom of Hyrule.",
+      title: "Fifa 25",
+      description: "A virtual football game",
       price: 59.99,
-      rating: 4.9,
+      rating: 4.1,
       releaseDate: new Date("2017-03-03"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746701541/download_kbzvxi.jpg",
     },
     {
-      title: "The Witcher 3: Wild Hunt",
-      description:
-        "An action RPG set in a fantasy world full of monsters and magic.",
+      title: "Mariokart 9",
+      description: "Racing game",
       price: 39.99,
-      rating: 4.8,
+      rating: 4.5,
       releaseDate: new Date("2015-05-19"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746700336/mario-kart-world-direct-everything-announced-for-the-switch_bdar_gy1mt5.jpg",
     },
     {
       title: "Red Dead Redemption 2",
@@ -25,6 +28,8 @@ async function seed() {
       price: 59.99,
       rating: 4.7,
       releaseDate: new Date("2018-10-26"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702640/download_isz57z.jpg",
     },
     {
       title: "God of War",
@@ -32,6 +37,8 @@ async function seed() {
       price: 49.99,
       rating: 4.9,
       releaseDate: new Date("2018-04-20"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702713/download_vawfvl.jpg",
     },
     {
       title: "Minecraft",
@@ -40,6 +47,8 @@ async function seed() {
       price: 26.95,
       rating: 4.8,
       releaseDate: new Date("2011-11-18"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702318/download_ajcw9q.jpg",
     },
     {
       title: "Fortnite",
@@ -48,6 +57,8 @@ async function seed() {
       price: 0.0,
       rating: 4.5,
       releaseDate: new Date("2017-07-25"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702381/download_erjpmo.jpg",
     },
     {
       title: "Cyberpunk 2077",
@@ -55,6 +66,8 @@ async function seed() {
       price: 59.99,
       rating: 4.0,
       releaseDate: new Date("2020-12-10"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702585/download_sjgbbt.jpg",
     },
     {
       title: "Among Us",
@@ -63,6 +76,8 @@ async function seed() {
       price: 4.99,
       rating: 4.4,
       releaseDate: new Date("2018-06-15"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702509/download_ylt5n9.jpg",
     },
     {
       title: "Animal Crossing: New Horizons",
@@ -71,14 +86,18 @@ async function seed() {
       price: 59.99,
       rating: 4.9,
       releaseDate: new Date("2020-03-20"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702548/download_bkmtsn.jpg",
     },
     {
-      title: "Hades",
+      title: "Super Smash Bros",
       description:
-        "A rogue-like dungeon crawler where players fight their way out of the Underworld.",
+        "Play as your favourite character in this crossover series of multiplayer fighting games.",
       price: 24.99,
       rating: 4.9,
       releaseDate: new Date("2020-09-17"),
+      imageUrl:
+        "https://res.cloudinary.com/dko9i2fab/image/upload/v1746702129/download_irrtsu.jpg",
     },
   ];
 

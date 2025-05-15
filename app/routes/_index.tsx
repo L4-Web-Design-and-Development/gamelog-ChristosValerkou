@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
+import GameCard from "../components/GameCard";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,7 +14,18 @@ export const meta: MetaFunction = () => {
 export async function loader() {
   const prisma = new PrismaClient();
 
-  const games = await prisma.game.findMany();
+  const games = await prisma.game.findMany({
+    select: {
+      id: true,
+      title: true,
+      releaseDate: true,
+      category: {
+        select: {
+          title: true,
+        },
+      },
+    },
+  });
 
   return json({ games });
 }
@@ -21,14 +33,18 @@ export async function loader() {
 export default function Index() {
   const { games } = useLoaderData<typeof loader>();
 
+  console.log({ games });
+
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="grid grid-cols-3 gap-8 container mx-auto">
       <div>
-        <h1 className="text-4xl font-bold">Hello, World!</h1>
         {games.map((game) => (
-          <div key={game.id}>
-            <h2>{game.title}</h2>
-          </div>
+          <GameCard
+            key={game.id}
+            title={game.title}
+            releaseDate={game.releaseDate}
+            categoryTitle={game.category?.title || "No Category"}
+          />
         ))}
       </div>
     </div>
